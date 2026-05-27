@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Grounds Guys of Ballantyne | Charlotte, NC | (704) 842-9490</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #faf8f3;
+  --dark: #1a1c14;
+  --forest: #2d4a1e;
+  --green: #3d6b28;
+  --mid: #5a9438;
+  --light: #a8cc84;
+  --tint: #eef5e8;
+  --border: #dde8d4;
+  --muted: #6b7260;
+  --warm: #f4f1ea;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(250,248,243,0.95); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; flex-direction: column; }
+.nav-logo-top { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--forest); }
+.nav-logo-sub { font-size: 0.68rem; color: var(--muted); font-weight: 500; letter-spacing: 0.05em; }
+nav ul { list-style: none; display: flex; align-items: center; gap: 1.75rem; }
+nav ul a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+nav ul a:hover { color: var(--dark); }
+.nav-phone { color: var(--green) !important; font-weight: 600 !important; }
+.nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--forest) !important; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 4.5rem; }
+.hero-left {
+  padding: 5rem 3rem 4rem 2.5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--forest); position: relative; overflow: hidden;
+}
+.hero-left::before {
+  content: '';
+  position: absolute; bottom: -20%; right: -10%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(90,148,56,0.2) 0%, transparent 70%);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--light);
+  margin-bottom: 1.5rem;
+}
+.hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--light); }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  color: #f4f1ea; line-height: 1.1; margin-bottom: 1.25rem;
+}
+.hero h1 em { font-style: italic; color: var(--light); }
+.hero-desc { font-size: 1rem; color: rgba(244,241,234,0.7); line-height: 1.8; max-width: 440px; margin-bottom: 2.25rem; }
+.hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn-green { background: var(--mid); color: #fff; padding: 0.85rem 1.75rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+.btn-green:hover { background: var(--green); }
+.btn-ghost { border: 1px solid rgba(244,241,234,0.25); color: #f4f1ea; padding: 0.85rem 1.75rem; border-radius: 6px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: border-color 0.2s; }
+.btn-ghost:hover { border-color: rgba(244,241,234,0.5); }
+.hero-promise {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+  display: flex; align-items: flex-start; gap: 1rem; max-width: 420px;
+}
+.promise-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.promise-title { font-size: 0.88rem; font-weight: 600; color: #f4f1ea; margin-bottom: 0.2rem; }
+.promise-text { font-size: 0.78rem; color: rgba(244,241,234,0.65); line-height: 1.6; }
+
+/* HERO RIGHT — PHOTO MOSAIC */
+.hero-right { display: grid; grid-template-rows: 60% 40%; }
+.hero-photo-top {
+  background-image: url('https://images.unsplash.com/photo-1558618047-f4e90fcec6c3?w=900&q=85');
+  background-size: cover; background-position: center;
+}
+.hero-photo-bottom { display: grid; grid-template-columns: 1fr 1fr; }
+.hero-photo-bl {
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80');
+  background-size: cover; background-position: center;
+}
+.hero-photo-br {
+  background-image: url('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600&q=80');
+  background-size: cover; background-position: center top;
+}
+
+/* STRIP */
+.strip { background: var(--green); padding: 0.85rem 2.5rem; display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+.strip-item { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.88); display: flex; align-items: center; gap: 0.4rem; }
+
+/* SECTIONS */
+.sec { padding: 5.5rem 2.5rem; max-width: 1140px; margin: 0 auto; }
+.eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 0.65rem; }
+.sec-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); line-height: 1.1; margin-bottom: 0.85rem; }
+.sec-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.75; max-width: 500px; }
+
+/* SERVICES */
+.svc-bg { background: var(--warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 2.75rem; }
+.svc-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.svc-card:hover { box-shadow: 0 8px 32px rgba(45,74,30,0.1); transform: translateY(-3px); }
+.svc-photo { height: 175px; background-size: cover; background-position: center; }
+.svc-body { padding: 1.5rem; }
+.svc-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+.svc-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+.svc-list { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.svc-tag { font-size: 0.72rem; font-weight: 600; color: var(--green); background: var(--tint); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; }
+
+/* ABOUT */
+.about-bg { background: var(--dark); }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1140px; margin: 0 auto; padding: 5.5rem 2.5rem; }
+.about-photo-col { position: relative; }
+.about-photo-main {
+  width: 100%; aspect-ratio: 4/5; border-radius: 14px;
+  background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=700&q=85');
+  background-size: cover; background-position: center;
+}
+.about-card {
+  position: absolute; bottom: -1.5rem; right: -1.5rem;
+  background: var(--green); color: #fff;
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+  border: 3px solid var(--dark); text-align: center;
+}
+.about-card-big { font-family: 'DM Serif Display', serif; font-size: 1.9rem; line-height: 1; }
+.about-card-small { font-size: 0.72rem; opacity: 0.85; margin-top: 0.25rem; line-height: 1.4; }
+.about-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light); margin-bottom: 0.75rem; }
+.about-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: #f4f1ea; line-height: 1.1; margin-bottom: 1.25rem; }
+.about-text { font-size: 0.92rem; color: rgba(244,241,234,0.7); line-height: 1.85; margin-bottom: 1.25rem; }
+.owner-block {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 1rem 1.25rem; margin-top: 2rem;
+}
+.owner-av { width: 44px; height: 44px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1rem; color: #fff; flex-shrink: 0; }
+.owner-name { font-size: 0.92rem; font-weight: 600; color: #f4f1ea; }
+.owner-title { font-size: 0.76rem; color: rgba(244,241,234,0.6); margin-top: 0.1rem; }
+
+/* AREAS */
+.area-bg { background: var(--tint); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.area-chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 0.6rem; margin-top: 2rem; }
+.chip { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.83rem; font-weight: 500; text-align: center; color: var(--dark); transition: border-color 0.2s, color 0.2s; }
+.chip:hover { border-color: var(--green); color: var(--green); }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.con-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+.con-title { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--forest); margin-bottom: 1.5rem; }
+.con-row { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border); }
+.con-row:last-child { border-bottom: none; }
+.con-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.95rem; }
+.con-label { font-size: 0.71rem; color: var(--muted); margin-bottom: 0.15rem; }
+.con-val { font-size: 0.9rem; font-weight: 600; }
+.con-val a { color: var(--green); text-decoration: none; }
+.con-val a:hover { text-decoration: underline; }
+.hours-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+.hours-row:last-child { border-bottom: none; }
+.h-day { color: var(--muted); }
+.h-time { font-weight: 600; }
+
+/* REVIEWS */
+.rv-bg { background: var(--warm); border-top: 1px solid var(--border); }
+.rv-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+.rv-score-wrap { display: flex; align-items: center; gap: 1.25rem; }
+.rv-big { font-family: 'DM Serif Display', serif; font-size: 4rem; line-height: 1; color: var(--green); }
+.rv-stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 0.05em; }
+.rv-count { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+.rv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem; }
+.rv-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s; }
+.rv-card:hover { border-color: var(--mid); }
+.rv-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
+.rv-av { width: 40px; height: 40px; border-radius: 50%; background: var(--tint); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 0.9rem; color: var(--green); flex-shrink: 0; }
+.rv-name { font-size: 0.9rem; font-weight: 600; }
+.rv-loc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+.rv-stars-sm { color: #f59e0b; font-size: 0.82rem; margin-bottom: 0.65rem; }
+.rv-text { font-size: 0.86rem; color: var(--muted); line-height: 1.72; }
+.rv-src { display: flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.72rem; color: var(--muted); }
+.rv-dot { width: 7px; height: 7px; border-radius: 50%; background: #4285f4; }
+
+/* CTA */
+.cta-bg { background: var(--forest); }
+.cta-inner { max-width: 1140px; margin: 0 auto; padding: 5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.cta-left h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: #f4f1ea; line-height: 1.1; margin-bottom: 0.75rem; }
+.cta-left p { color: rgba(244,241,234,0.7); max-width: 440px; line-height: 1.75; font-size: 0.97rem; }
+.cta-right { display: flex; flex-direction: column; gap: 1rem; }
+.cta-ph { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--light); text-decoration: none; transition: opacity 0.2s; }
+.cta-ph:hover { opacity: 0.8; }
+.btn-cream { background: var(--cream); color: var(--forest); padding: 0.85rem 2rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s; display: inline-block; }
+.btn-cream:hover { opacity: 0.9; }
+
+/* FOOTER */
+footer { background: var(--dark); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.ft-logo { font-family: 'DM Serif Display', serif; font-size: 0.95rem; color: #f4f1ea; }
+.ft-logo span { color: var(--light); }
+footer p { font-size: 0.78rem; color: #6b7260; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 55vw; }
+  .hero-photo-bottom { display: none; }
+  .about-inner { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav ul { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-top">The Grounds Guys of Ballantyne</div>
+    <div class="nav-logo-sub">Ballantyne, Charlotte NC · Est. 2021</div>
+  </div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:7048429490" class="nav-phone">☎ (704) 842-9490</a></li>
+    <li><a href="#cta" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Ballantyne, Charlotte NC · Locally Owned</div>
+    <h1>Your Lawn, <em>Done Right.</em> Every Time.</h1>
+    <p class="hero-desc">Full-service lawn care and landscaping for Ballantyne and south Charlotte — mowing, landscape design, fertilization, irrigation, seasonal cleanups, and more. Backed by the Neighborly Done Right Promise.</p>
+    <div class="hero-btns">
+      <a href="tel:7048429490" class="btn-green">Call (704) 842-9490</a>
+      <a href="mailto:Kevin.murphy@groundsguys.com" class="btn-ghost">Email Kevin</a>
+    </div>
+    <div class="hero-promise">
+      <div class="promise-icon">🤝</div>
+      <div>
+        <div class="promise-title">The Neighborly Done Right Promise</div>
+        <div class="promise-text">If it's not done right, we make it right. No exceptions, no excuses — guaranteed on every single job.</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-top"></div>
+    <div class="hero-photo-bottom">
+      <div class="hero-photo-bl"></div>
+      <div class="hero-photo-br"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-item">✔ Licensed &amp; Insured</div>
+  <div class="strip-item">✔ Neighborly Done Right Promise</div>
+  <div class="strip-item">✔ Free Estimates</div>
+  <div class="strip-item">✔ Residential &amp; Commercial</div>
+  <div class="strip-item">✔ Locally Owned by Kevin Murphy</div>
+</div>
+
+<div class="svc-bg">
+<div class="sec" id="services">
+  <div class="eyebrow">What We Do</div>
+  <div class="sec-title">Our Services</div>
+  <p class="sec-sub">From weekly lawn maintenance to full landscape installations — The Grounds Guys of Ballantyne handles everything your property needs year-round.</p>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1558618047-f4e90fcec6c3?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Lawn Mowing &amp; Maintenance</div>
+        <p class="svc-desc">Consistent, scheduled mowing and edging that keeps your lawn neat and healthy all season long.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Mowing</span>
+          <span class="svc-tag">Edging</span>
+          <span class="svc-tag">Aeration</span>
+          <span class="svc-tag">Dethatching</span>
+          <span class="svc-tag">Seeding</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Landscape Design &amp; Installation</div>
+        <p class="svc-desc">Kevin brings 25+ years of design sensibility to creating outdoor spaces that are beautiful and low-maintenance.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Design</span>
+          <span class="svc-tag">Installation</span>
+          <span class="svc-tag">Sod</span>
+          <span class="svc-tag">Hardscaping</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Fertilization &amp; Weed Control</div>
+        <p class="svc-desc">Custom fertilization programs and weed control treatments tailored to Ballantyne's specific soil and climate conditions.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Fertilization</span>
+          <span class="svc-tag">Weed Control</span>
+          <span class="svc-tag">Pest Control</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Irrigation Services</div>
+        <p class="svc-desc">Installation, repair, and maintenance of irrigation systems — including smart timer upgrades and drip systems.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Installation</span>
+          <span class="svc-tag">Repair</span>
+          <span class="svc-tag">Smart Timers</span>
+          <span class="svc-tag">Drip Systems</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Tree, Shrub &amp; Bed Maintenance</div>
+        <p class="svc-desc">Professional pruning, mulch installation, flower bed maintenance, and shrub fertilization to keep every corner of your property sharp.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Pruning</span>
+          <span class="svc-tag">Mulch</span>
+          <span class="svc-tag">Bed Maintenance</span>
+          <span class="svc-tag">Tree Trimming</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=700&q=80')"></div>
+      <div class="svc-body">
+        <div class="svc-name">Seasonal Cleanups &amp; Storm Service</div>
+        <p class="svc-desc">Spring and fall cleanups, leaf removal, storm damage cleanup, and drainage repair to keep your property looking its best year-round.</p>
+        <div class="svc-list">
+          <span class="svc-tag">Fall Cleanup</span>
+          <span class="svc-tag">Leaf Removal</span>
+          <span class="svc-tag">Storm Cleanup</span>
+          <span class="svc-tag">Drainage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="about-bg">
+<div class="about-inner" id="about">
+  <div class="about-photo-col">
+    <div class="about-photo-main"></div>
+    <div class="about-card">
+      <div class="about-card-big">25+</div>
+      <div class="about-card-small">Years of Customer<br>Service Excellence</div>
+    </div>
+  </div>
+  <div>
+    <div class="about-eyebrow">Who We Are</div>
+    <div class="about-title">A Corporate Career Traded for a Greener Calling</div>
+    <p class="about-text">Kevin Murphy spent 25 years learning what world-class customer service looks like from the inside of corporate America. During the COVID-19 lockdown, he found himself pouring more time into his true passion — landscaping his own yard and designing outdoor spaces.</p>
+    <p class="about-text">That clarity led him to start The Grounds Guys of Ballantyne — combining the service standards of corporate America with the hands-on care of a local small business. Kevin is a hands-on owner who regularly visits properties himself, personally checks in on his team's work, and has been known to show up on a day off to finish a job when equipment fails.</p>
+    <p class="about-text">As a Neighborly company, every job is backed by the Done Right Promise — if it's not right, we make it right, full stop.</p>
+    <div class="owner-block">
+      <div class="owner-av">KM</div>
+      <div>
+        <div class="owner-name">Kevin Murphy</div>
+        <div class="owner-title">Owner · Kevin.murphy@groundsguys.com · (704) 842-9490</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="area-bg">
+<div class="sec">
+  <div class="eyebrow">Where We Work</div>
+  <div class="sec-title">Service Area</div>
+  <p class="sec-sub">Serving Ballantyne and the surrounding communities across south Charlotte and beyond.</p>
+  <div class="area-chips">
+    <div class="chip">Ballantyne</div>
+    <div class="chip">Pineville</div>
+    <div class="chip">Waxhaw</div>
+    <div class="chip">Weddington</div>
+    <div class="chip">Indian Trail</div>
+    <div class="chip">Matthews</div>
+    <div class="chip">Fort Mill, SC</div>
+    <div class="chip">Lake Wylie, SC</div>
+    <div class="chip">Indian Land, SC</div>
+    <div class="chip">Marvin</div>
+    <div class="chip">Mint Hill</div>
+    <div class="chip">Stallings</div>
+  </div>
+</div>
+</div>
+
+<div class="sec" id="contact">
+  <div class="eyebrow">Hours &amp; Contact</div>
+  <div class="sec-title">Get in Touch</div>
+  <div class="contact-grid">
+    <div class="con-card">
+      <div class="con-title">Contact Information</div>
+      <div class="con-row">
+        <div class="con-icon">📞</div>
+        <div><div class="con-label">Phone</div><div class="con-val"><a href="tel:7048429490">(704) 842-9490</a></div></div>
+      </div>
+      <div class="con-row">
+        <div class="con-icon">✉️</div>
+        <div><div class="con-label">Email</div><div class="con-val"><a href="mailto:Kevin.murphy@groundsguys.com">Kevin.murphy@groundsguys.com</a></div></div>
+      </div>
+      <div class="con-row">
+        <div class="con-icon">📍</div>
+        <div><div class="con-label">Location</div><div class="con-val">Charlotte, NC 28277</div></div>
+      </div>
+      <div class="con-row">
+        <div class="con-icon">🌐</div>
+        <div><div class="con-label">Website</div><div class="con-val"><a href="https://www.groundsguys.com/locations/north-carolina/ballantyne/" target="_blank">groundsguys.com/ballantyne</a></div></div>
+      </div>
+      <div style="margin-top:1.5rem;"><a href="tel:7048429490" class="btn-green" style="display:block;text-align:center;">Call for a Free Estimate</a></div>
+    </div>
+    <div class="con-card">
+      <div class="con-title">Hours of Operation</div>
+      <div class="hours-row"><span class="h-day">Monday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Tuesday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Wednesday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Thursday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Friday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Saturday</span><span class="h-time">8:00 AM — 5:00 PM</span></div>
+      <div class="hours-row"><span class="h-day">Sunday</span><span class="h-time" style="color:#dc2626;">Closed</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="rv-bg">
+<div class="sec" id="reviews">
+  <div class="rv-header">
+    <div>
+      <div class="eyebrow">What Customers Say</div>
+      <div class="sec-title">Real Reviews from Ballantyne</div>
+    </div>
+    <div class="rv-score-wrap">
+      <div class="rv-big">5.0</div>
+      <div><div class="rv-stars">★★★★★</div><div class="rv-count">Verified Google Reviews</div></div>
+    </div>
+  </div>
+  <div class="rv-grid">
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">JB</div><div><div class="rv-name">Jeff B.</div><div class="rv-loc">Ballantyne, Charlotte</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">After trying a half dozen different lawn companies over several years with poor to mediocre results, we landed on Kevin and The Grounds Guys. Our lawn has never looked better. They show up consistently when scheduled, they are efficient and thorough, and our grass is greener than it has been in probably 8 years. Kevin is a hands-on owner and has even personally pruned bushes for us. I can highly recommend.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">SM</div><div><div class="rv-name">Sarah M.</div><div class="rv-loc">Ballantyne, Charlotte</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">Grounds Guys of Ballantyne are awesome. They take care of everything your yard could need which is super convenient. Plus they do it all really well. Kevin is great to work with — he really cares about his customers.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">RT</div><div><div class="rv-name">Robert T.</div><div class="rv-loc">South Charlotte</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">It's nice to work with a small business that really cares. Kevin, the owner, even came by my house on a day off to finish a treatment when a piece of equipment went down. Professional, great work, fair prices. Highly recommend.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">LC</div><div><div class="rv-name">Laura C.</div><div class="rv-loc">Waxhaw, NC</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">Kevin and his team have done a phenomenal job with the property. He has been very attentive to all the ins and outs of my requests. Would highly recommend his service to anyone looking for a landscaper in the Ballantyne area.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">MH</div><div><div class="rv-name">Mark H.</div><div class="rv-loc">Ballantyne, Charlotte</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">Very meticulous and complete job. Repaired my residential irrigation and lighting — fixed leaks and lighting that was not working. Couldn't be happier with the results or the professionalism of the team.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-top"><div class="rv-av">TW</div><div><div class="rv-name">Tracy W.</div><div class="rv-loc">Weddington, NC</div></div></div>
+      <div class="rv-stars-sm">★★★★★</div>
+      <p class="rv-text">Super great company. They removed bushes from our front yard and trimmed our hedges — everything looks so clean and polished now. They were on time, professional, and the price was fair. Will definitely use them again.</p>
+      <div class="rv-src"><div class="rv-dot"></div> Verified Google Review</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="cta-bg" id="cta">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2>Ready for a Yard You Actually Love?</h2>
+      <p>Call or email Kevin directly for a free estimate. He responds fast and will personally walk through your property to understand exactly what you need.</p>
+    </div>
+    <div class="cta-right">
+      <a href="tel:7048429490" class="cta-ph">☎ (704) 842-9490</a>
+      <a href="mailto:Kevin.murphy@groundsguys.com" class="btn-cream">Email Kevin Directly</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-logo">The Grounds Guys <span>of Ballantyne</span></div>
+  <p>© 2026 The Grounds Guys of Ballantyne · Charlotte, NC 28277 · Locally Owned by Kevin Murphy</p>
+  <p style="color:#a8cc84;font-size:0.78rem;">A Proud Neighborly Company</p>
+</footer>
+
+</body>
+</html>
